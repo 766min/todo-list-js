@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card" aria-labelledby="app-title">
+      <header class="card__header">
+        <h1 id="app-title">Todo List</h1>
+        <p class="card__subtitle">오늘 할 일을 가볍게 정리해보세요</p>
+      </header>
+
+      <form class="todo-form" id="todo-form">
+        <label for="todo-input" class="sr-only">할 일 입력</label>
+        <input
+          type="text"
+          id="todo-input"
+          name="todo-input"
+          placeholder="할 일을 입력하세요"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" aria-label="할 일 추가">추가</button>
+      </form>
+
+      <div class="progress" aria-live="polite">
+        <div class="progress__bar">
+          <div class="progress__fill" id="progress-fill"></div>
+        </div>
+        <span class="progress__text" id="progress-text">0/0 완료</span>
+      </div>
+
+      <nav class="filters" aria-label="할 일 필터">
+        <button type="button" class="filter-btn is-active" data-filter="all">전체</button>
+        <button type="button" class="filter-btn" data-filter="active">진행중</button>
+        <button type="button" class="filter-btn" data-filter="completed">완료</button>
+      </nav>
+
+      <ul class="todo-list" id="todo-list"></ul>
+
+      <p class="empty-state" id="empty-state" hidden>표시할 할 일이 없어요</p>
+    </section>
+
+    <footer class="app__footer">
+      <p>JavaScript DOM &amp; Event 연습 과제</p>
+    </footer>
+  </main>
+
+  <script src="js/todo.js"></script>
+</body>
+</html>
